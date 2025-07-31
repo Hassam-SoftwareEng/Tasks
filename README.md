@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Buzzware Tech Front-End Project
 
 This is a simple front-end website for **Buzzware Tech Company Pvt Ltd**, containing three main pages:
@@ -38,3 +39,6 @@ Each page is styled using **HTML & CSS**, and basic functionality is handled via
 - **JavaScript (Vanilla)**
 - `localStorage` for temporary user login simulation
 
+=======
+# Tasks
+>>>>>>> 8a58de39ae7a66039e99973c4b8f98e9fd6493b5

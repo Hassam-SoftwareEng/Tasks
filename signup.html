@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-image: url('image.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+    }
+
+    nav {
+      width: 100%;
+      background: rgba(112, 128, 144, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      color: white;
+      font-weight: bold;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      height: calc(100vh - 70px);
+    }
+
+    .Signup-box {
+      max-width: 400px;
+      width: 100%;
+      padding: 40px;
+      background: rgba(112, 128, 144, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 0 10px #000;
+      backdrop-filter: blur(15px);
+    }
+
+    h2 {
+      font-size: 2em;
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-box {
+      position: relative;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 12px 10px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid white;
+      color: white;
+      font-size: 1em;
+      outline: none;
+    }
+
+    .input-box label {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1em;
+      color: white;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .input-box input:focus + label,
+    .input-box input:valid + label {
+      top: -10px;
+      font-size: 0.85em;
+      color: #ddd;
+    }
+
+    .terms {
+      margin: 10px 0 20px;
+      font-size: 0.9em;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .terms input {
+      margin-right: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: yellow;
+      color: black;
+    }
+
+    .login-link {
+      font-size: 0.9em;
+      color: white;
+      text-align: center;
+      margin: 25px 0 10px;
+    }
+
+    .login-link p a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-link p a:hover {
+      color: yellow;
+    }
+
+    #msg {
+      color: yellow;
+      margin-top: 10px;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    input:-webkit-autofill {
+      transition: background-color 9999s ease-in-out 0s;
+      -webkit-text-fill-color: white !important;
+    }
+
+    @media (max-width: 480px) {
+      .Signup-box {
+        padding: 25px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Buzzware Tech Company Pvt Ltd</div>
+  </nav>
+
+  <section>
+    <div class="Signup-box">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-box">
+          <input type="text" id="username" required />
+          <label for="username">Full Name</label>
+        </div>
+        <div class="input-box">
+          <input type="email" id="email" required />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" id="password" required />
+          <label for="password">Password</label>
+        </div>
+        <div class="terms">
+          <input type="checkbox" id="agree" required />
+          <label for="agree">I agree to the Terms & Conditions</label>
+        </div>
+        <button type="submit">Create Account</button>
+        <div id="msg" class="message"></div>
+      </form>
+      <div class="login-link">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const agree = document.getElementById('agree').checked;
+
+      if (!username || !email || !password || !agree) {
+        document.getElementById('msg').innerText = "Please fill all fields and accept terms!";
+        return;
+      }
+
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

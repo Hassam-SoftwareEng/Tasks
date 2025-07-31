@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body, html {
+      height: 100%;
+    }
+    section {
+      width: 100%;
+      min-height: 100vh;
+      background-image: url('image.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      background: rgba(112, 128, 144, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    .logo {
+      font-size: 1.5em;
+      color: white;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+    .content, .section-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .content p, .section-content p {
+      font-size: 1.2em;
+      color: white;
+      background: rgba(112, 128, 144, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 85px;
+    }
+    footer {
+      text-align: center;
+      background: rgba(112, 128, 144, 0.9);
+      color: white;
+      padding: 15px 20px;
+      font-size: 1em;
+      margin-top: 90px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        padding-top: 10px;
+      }
+      .content p, .section-content p {
+        font-size: 1em;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <nav>
+      <div class="logo">Buzzware Tech Company Private Ltd</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#help">Help</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  <div class="content" id="home">
+  <p>
+    Welcome to the Home Page!<br><br>
+    This is an IT company where you can work on a wide range of projects related to Web and App Development. 
+    We specialize in creating innovative, user-friendly, and high-performance digital solutions that meet the needs of modern businesses.<br><br>
+    At Buzzware Tech Company Private Ltd, we are committed to delivering top-quality services with a strong focus on customer satisfaction. 
+    Whether you're a startup or an established enterprise, we ensure that your digital transformation journey is smooth, reliable, and results-driven.
+  </p>
+</div>    <footer>
+      <p>  Welcome to the Home Page | Buzzware Tech Company Pvt Ltd </p>
+      <p>Buzzware Tech is committed to delivering digital innovation and empowering learners through practical IT training and mentorship.</p>
+    </footer>
+  </section>
+  <script>
+    function logout() {
+  
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
